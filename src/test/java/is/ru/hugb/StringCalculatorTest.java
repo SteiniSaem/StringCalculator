@@ -11,4 +11,12 @@ public class StringCalculatorTest {
 	{
 		assertEquals(0, StringCalculator.Add(""));
 	}
+
+	@Test
+	public void oneSingleDigitNumber()
+	{
+		assertEquals(1, StringCalculator.Add("1"));
+		assertEquals(5, StringCalculator.Add("5"));
+	}
+
 }
