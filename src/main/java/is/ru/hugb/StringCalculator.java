@@ -29,6 +29,10 @@ public class StringCalculator
 					negatives[count] = n;
 					count++;
 				}
+				if(n > 1000)
+				{
+					n = 0;
+				}
 				sum += n;
 			}
 			if(count != 0)
@@ -39,6 +43,10 @@ public class StringCalculator
 				{
 					negatives2[i] = negatives[i];
 					i++;
+					if(i == count)
+					{
+						break;
+					}
 				}
 				throw new IllegalArgumentException("Negatives not allowed: " + Arrays.toString(negatives2).replaceAll("\\[|\\]|\\s", "")); 
 			}
