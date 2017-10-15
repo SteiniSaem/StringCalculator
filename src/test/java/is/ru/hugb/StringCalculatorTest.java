@@ -1,7 +1,8 @@
 package is.ru.hugb.StringCalculator;
 
 import static org.junit.Assert.assertEquals;
-
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 import org.junit.Test;
 
 public class StringCalculatorTest {
@@ -40,6 +41,12 @@ public class StringCalculatorTest {
 	{
 		assertEquals(210, calc.Add("3,91\n116"));
 		assertEquals(2704, calc.Add("2110\n503,91"));
+	}
+
+	@Test
+	public void negativeNumber()
+	{
+		ExpectedException;
 	}
 
 }

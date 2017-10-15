@@ -19,14 +19,13 @@ public class StringCalculator
 			String[] array = numbers.split(",");
 			for(int i = 0; i < array.length; i++)
 			{
+				if(Integer.parseInt(array[i]) < 0)
+				{
+					throw new IllegalArgumentException("Negatives not allowed"); 
+				}
 				sum += Integer.parseInt(array[i]);
 			}
 			return sum;
 		}
-	}
-	
-	public static void main(String[] args) {
-
-		System.out.println(Add("3,91\n116"));
 	}
 }
