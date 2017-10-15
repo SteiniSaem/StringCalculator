@@ -27,4 +27,19 @@ public class StringCalculatorTest {
 		assertEquals(3, calc.Add("1,2"));
 		assertEquals(12, calc.Add("5,7"));
 	}
+
+	@Test
+	public void multipleNumbers()
+	{
+		assertEquals(210, calc.Add("3,91,116"));
+		assertEquals(2704, calc.Add("2110,503,91"));
+	}
+
+	@Test
+	public void withNewLine()
+	{
+		assertEquals(210, calc.Add("3,91\n116"));
+		assertEquals(2704, calc.Add("2110\n503,91"));
+	}
+
 }

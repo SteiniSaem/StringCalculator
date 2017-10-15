@@ -11,6 +11,10 @@ public class StringCalculator
 		}
 		else
 		{
+			if(numbers.contains("\n"))
+			{
+				numbers = numbers.replaceAll("\n", ",");
+			}
 			int sum = 0;
 			String[] array = numbers.split(",");
 			for(int i = 0; i < array.length; i++)
@@ -19,9 +23,10 @@ public class StringCalculator
 			}
 			return sum;
 		}
-
+	}
+	
 	public static void main(String[] args) {
 
-		System.out.println(Add("3,91,116"));
+		System.out.println(Add("3,91\n116"));
 	}
 }
