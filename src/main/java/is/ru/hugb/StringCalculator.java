@@ -1,5 +1,7 @@
 package is.ru.hugb.StringCalculator;
 
+import java.util.Arrays;
+
 
 public class StringCalculator
 {
@@ -17,15 +19,31 @@ public class StringCalculator
 			}
 			int sum = 0;
 			String[] array = numbers.split(",");
+			int[] negatives = new int[array.length];
+			int count = 0;
 			for(int i = 0; i < array.length; i++)
 			{
-				if(Integer.parseInt(array[i]) < 0)
+				int n = Integer.parseInt(array[i]);
+				if(n < 0)
 				{
-					throw new IllegalArgumentException("Negatives not allowed"); 
+					negatives[count] = n;
+					count++;
 				}
-				sum += Integer.parseInt(array[i]);
+				sum += n;
+			}
+			if(count != 0)
+			{
+				int[] negatives2 = new int[count];
+				int i = 0;
+				while(negatives[i] != 0)
+				{
+					negatives2[i] = negatives[i];
+					i++;
+				}
+				throw new IllegalArgumentException("Negatives not allowed: " + Arrays.toString(negatives2).replaceAll("\\[|\\]|\\s", "")); 
 			}
 			return sum;
 		}
 	}
+	
 }
