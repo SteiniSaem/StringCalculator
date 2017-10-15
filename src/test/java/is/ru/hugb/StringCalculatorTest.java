@@ -49,4 +49,11 @@ public class StringCalculatorTest {
 		ExpectedException;
 	}
 
+	@Test
+	public void numberBiggerThanThousand()
+	{
+		assertEquals(0, calc.Add("2000"));
+		assertEquals(8, calc.Add("1001\n3,5"));
+	}
+
 }
