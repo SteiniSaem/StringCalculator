@@ -9,24 +9,19 @@ public class StringCalculator
 		{
 			return 0;
 		}
-		
-		if(numbers.length() == 1)
+		else
 		{
-			char a = numbers.charAt(0);
-			int num = Character.getNumericValue(a);
-			return num;
+			int sum = 0;
+			String[] array = numbers.split(",");
+			for(int i = 0; i < array.length; i++)
+			{
+				sum += Integer.parseInt(array[i]);
+			}
+			return sum;
 		}
-		if(numbers.length() == 2)
-		{
-			char a = numbers.charAt(0);
-			int num1 = Character.getNumericValue(a);
-			char b = numbers.charAt(2);
-			int num2 = Character.getNumericValue(b);
-			return num1 + num2;
-		}
-	}
-	
+
 	public static void main(String[] args) {
 
+		System.out.println(Add("3,91,116"));
 	}
 }
